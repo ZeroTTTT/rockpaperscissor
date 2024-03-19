@@ -28,9 +28,9 @@ const choice = {
 
 function App() {
 
-  const [userSelect, setUserSelect] = useState(null)
-  const [computerSelect, setComputerSelect] = useState(null)
-  const [result, setResult] = useState(null)
+  const [userSelect, setUserSelect] = useState(null);
+  const [computerSelect, setComputerSelect] = useState(null);
+  const [result, setResult] = useState(""); //useState("")를 useState(null)로 바꾸면 첫화면에서 컴퓨터가 win으로 표시된다.
 
   const play=(userChoice)=>{
     // console.log("선택됨:", userChoice);
