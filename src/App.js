@@ -34,16 +34,24 @@ function App() {
 
   const play=(userChoice)=>{
     // console.log("선택됨:", userChoice);
-    setUserSelect(choice[userChoice])
-    let computerChoice = randomChoice()
+    let computerChoice = randomChoice();
+    setUserSelect(choice[userChoice]);    
     setComputerSelect(computerChoice);
     setResult(judgement(choice[userChoice], computerChoice)) 
     
   };
 
-  const judgement = (user, computer) => {
-    console.log("user", user, "computer", computer);
+  const randomChoice=() =>{
+    let itemArrary = Object.keys(choice); //Object.keys : 객체의 key값만 뽑아서 Array로 만들어준다
+    console.log("itemArray", itemArrary);
+    let ramdomItem = Math.floor(Math.random() * itemArrary.length); //Math.floor : 소수점 아래 숫자는 버린다
+    // console.log("Math.random", Math.random())
+    // console.log("length",itemArrary.length)
+    let final = itemArrary[ramdomItem]
+    return choice[final];
+  };
 
+  const judgement = (user, computer) => {
     // user == computer tie
     // user == rock, computer == scissors user win
     // user == rock, computer == paper user loss
@@ -51,15 +59,6 @@ function App() {
     // user == scissors, computer == rack user loss
     // user == paper, computer == rock user win
     // user == paper, computer == scissors user loss
-
-    //  if (user.name == computer.name){
-    //   return "tie"
-    //  }else if (user.name=="rock"){
-    //   return "win"
-    //  }else{
-    //   return "loss"
-    //  }
-
     //위의 내용을 삼항연산식으로 정리
     if (user.name == computer.name){
       return "tie"
@@ -72,15 +71,7 @@ function App() {
     } 
   };
 
-  const randomChoice=() =>{
-    let itemArrary = Object.keys(choice); //Object.keys : 객체의 key값만 뽑아서 Array로 만들어준다
-    console.log("itemArray", itemArrary);
-    let ramdomItem = Math.floor(Math.random() * itemArrary.length); //Math.floor : 소수점 아래 숫자는 버린다
-    // console.log("Math.random", Math.random())
-    // console.log("length",itemArrary.length)
-    let final = itemArrary[ramdomItem]
-    return choice[final];
-  }
+
 
   return (
     <div>
