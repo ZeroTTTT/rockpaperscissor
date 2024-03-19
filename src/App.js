@@ -63,10 +63,13 @@ function App() {
     //위의 내용을 삼항연산식으로 정리
     if (user.name == computer.name){
       return "tie"
-    } else if (user.name == "Rock") return computer.name =="Scissors"?"win":"loss"
-    else if (user.name == "Scissors") return computer.name == "Paper"?"win":"loss"
-    else if (user.App == "Paper") return computer.name == "Rock"?"win":"loss"
-     
+    } else if (user.name == "Rock") {
+      return computer.name =="Scissors"?"win":"loss"
+    } else if (user.name == "Scissors") {
+      return computer.name == "Paper"?"win":"loss"
+    } else if (user.name == "Paper") {
+      return computer.name == "Rock"?"win":"loss"
+    } 
   };
 
   const randomChoice=() =>{
