@@ -7,7 +7,7 @@ const box = (props) => {
         props.result !== "tie" &&
         props.result !== "" ){
         //카드가 computer카드인가? && 결과가 비긴건 아닌가? && props.result에 값이 있는가?
-        result = props.result === "win"?"loss":"win";        
+        result = props.result == "win"?"loss":"win";        
         } else { // 위의 경우가 아니라면 props$nbsp;로 전달된 결과를 그대로 쓴다.
             result = props.result;
         }    
