@@ -54,20 +54,20 @@ function App() {
   const judgement = (user, computer) => {
     // user == computer tie
     // user == rock, computer == scissors user win
-    // user == rock, computer == paper user loss
+    // user == rock, computer == paper user lose
     // user == scissors, computer == paper user win
-    // user == scissors, computer == rack user loss
+    // user == scissors, computer == rack user lose
     // user == paper, computer == rock user win
-    // user == paper, computer == scissors user loss
+    // user == paper, computer == scissors user lose
     //위의 내용을 삼항연산식으로 정리
     if (user.name == computer.name){
       return "tie"
     } else if (user.name == "Rock") {
-      return computer.name =="Scissors"?"win":"loss"
+      return computer.name =="Scissors"?"win":"lose"
     } else if (user.name == "Scissors") {
-      return computer.name == "Paper"?"win":"loss"
+      return computer.name == "Paper"?"win":"lose"
     } else if (user.name == "Paper") {
-      return computer.name == "Rock"?"win":"loss"
+      return computer.name == "Rock"?"win":"lose"
     } 
   };
 
